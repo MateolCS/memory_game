@@ -1,5 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./index.css";
 
 function App() {
   const [data, setData] = useState([]);
@@ -27,7 +30,12 @@ function App() {
 
   console.log(data);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Header />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
