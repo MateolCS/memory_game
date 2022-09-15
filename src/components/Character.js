@@ -4,11 +4,13 @@ const Character = ({ characterInfo }) => {
   return (
     <div className="character">
       <img
-        src={characterInfo.imgUrl}
+        src={characterInfo.imageUrl}
         alt={characterInfo.name}
         className="character__img"
       />
-      <p className="character__name">{`${characterInfo.firstName} ${characterInfo.lastName}`}</p>
+      <p className="character__name">{`${characterInfo.firstName} ${
+        characterInfo.lastName !== "Unknown" ? characterInfo.lastName : ""
+      }`}</p>
     </div>
   );
 };
