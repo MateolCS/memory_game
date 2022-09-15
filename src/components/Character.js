@@ -1,8 +1,16 @@
 import React from "react";
+import { useState } from "react";
 
-const Character = ({ characterInfo }) => {
+const Character = ({ characterInfo, onCharacterClick }) => {
+  const [character, setCharacer] = useState(characterInfo);
+
   return (
-    <div className="character">
+    <div
+      className="character"
+      onClick={() => {
+        onCharacterClick(character);
+      }}
+    >
       <img
         src={characterInfo.imageUrl}
         alt={characterInfo.name}
