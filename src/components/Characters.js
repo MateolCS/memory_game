@@ -1,7 +1,7 @@
 import React from "react";
 import Character from "./Character";
 import { useEffect, useState } from "react";
-const Characters = () => {
+const Characters = ({ onScoreChange, onMissplay }) => {
   const [heroes, setHeroes] = useState([]);
   const [clickedHeroes, setClickedHeroes] = useState([]);
 
@@ -30,16 +30,18 @@ const Characters = () => {
     setHeroes(heroes.sort(() => Math.random() - 0.5));
   };
 
-  const addClickedHero = (hero) => {
-    if (clickedHeroes.includes(hero)) {
+  const addClickedHero = (heroName) => {
+    if (clickedHeroes.includes(heroName)) {
       setClickedHeroes([]);
       shuffle();
+      onMissplay();
       console.log("You lost!");
       return;
     }
 
-    setClickedHeroes([...clickedHeroes, hero]);
+    setClickedHeroes([...clickedHeroes, heroName]);
     shuffle();
+    onScoreChange();
   };
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const Character = ({ characterInfo, onCharacterClick }) => {
-  const [character, setCharacer] = useState(characterInfo);
+  const [character, setCharacer] = useState(characterInfo.fullName);
 
   return (
     <div
