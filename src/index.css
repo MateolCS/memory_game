@@ -105,3 +105,17 @@ body{
   margin-top: 2rem;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 768px){
+  .characters__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer{
+    margin-bottom: 4rem;
+  }
+
+  .header__title{
+    text-align: center;
+  }
+}
